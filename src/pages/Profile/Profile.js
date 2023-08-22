@@ -17,6 +17,7 @@ const GET_PROFILE = gql`
           title
           content
           createdAt
+          published
         }
       }
     }
@@ -54,6 +55,9 @@ export default function Profile() {
             title={post.title}
             content={post.content}
             createdAt={post.createdAt}
+            published={post.published}
+            isMyProfile={data?.profile?.isMyProfile}
+            id={post.id}
           />
         ))}
       </div>
